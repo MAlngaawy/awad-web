@@ -39,5 +39,5 @@ function App() {
 
 export default App;
 
-const Home = () => <h1 className="text-red-500">HomePage</h1>;
+const Home = () => <h1 className="">HomePage</h1>;
 export { api };

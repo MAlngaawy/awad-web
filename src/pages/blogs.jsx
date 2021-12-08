@@ -14,7 +14,7 @@ const Blog = () => {
   return (
     <div>
       <h1>Blog Posts</h1>
-      <ul>
+      <ul className="grid justify-around">
         {data.map(blog => (
           <li key={blog.id}>
             <Link to={`/blogs/${blog.id}`}>

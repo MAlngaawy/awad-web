@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { api } from '../App';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 const SingleBlog = () => {
   const [blog, setBlog] = useState({});
@@ -14,7 +16,11 @@ const SingleBlog = () => {
       .catch(err => console.log(err));
   }, []);
 
-  return <div>{blog.content}</div>;
+  return (
+    <div>
+      <ReactMarkdown children={blog.content} remarkPlugins={remarkGfm} />
+    </div>
+  );
 };
 
 export default SingleBlog;
