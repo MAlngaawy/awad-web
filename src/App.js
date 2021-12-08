@@ -1,7 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Blog from './pages/blog';
+import Blog from './pages/blogs';
 import About from './pages/about';
+import SingleBlog from './pages/single-blog';
+
+const api = 'https://mo-strapi-playground.herokuapp.com';
 
 function App() {
   return (
@@ -28,6 +31,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="blogs" element={<Blog />} />
         <Route path="about" element={<About />} />
+        <Route path="blogs/:id" element={<SingleBlog />} />
       </Routes>
     </Router>
   );
@@ -36,3 +40,4 @@ function App() {
 export default App;
 
 const Home = () => <h1>HomePage</h1>;
+export { api };
