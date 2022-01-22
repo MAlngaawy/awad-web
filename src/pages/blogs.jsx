@@ -12,21 +12,17 @@ const Blog = () => {
       .then(json => setData(json));
   }, []);
   return (
-    <div>
+    <div className="blog-posts container">
       <h1>Blog Posts</h1>
-      <ul className="grid justify-around">
-        {data.map(blog => (
-          <li key={blog.id}>
-            <Link to={`/blogs/${blog.id}`}>
-              <BlogTitle
-                title={blog.title}
-                date={blog.published_at}
-                img={blog.cover.formats.thumbnail.url}
-              />
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {data.map(blog => (
+        <Link key={blog.id} to={`/blogs/${blog.id}`}>
+          <BlogTitle
+            title={blog.title}
+            date={blog.published_at}
+            img={blog.cover.formats.thumbnail.url}
+          />
+        </Link>
+      ))}
     </div>
   );
 };

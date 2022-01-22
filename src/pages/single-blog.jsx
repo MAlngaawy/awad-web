@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm';
 
 const SingleBlog = () => {
   const [blog, setBlog] = useState({});
+  const testMarkdown = `hello **world**`;
 
   useEffect(() => {
     const blogId = window.location.href.split('/')[4];
@@ -16,11 +17,7 @@ const SingleBlog = () => {
       .catch(err => console.log(err));
   }, []);
 
-  return (
-    <div>
-      <ReactMarkdown children={blog.content} remarkPlugins={remarkGfm} />
-    </div>
-  );
+  return <ReactMarkdown children={blog.content} rehypePlugins={[remarkGfm]} />;
 };
 
 export default SingleBlog;
