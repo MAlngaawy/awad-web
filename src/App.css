@@ -4,17 +4,7 @@
   /* background-color: #000; */
 }
 
-.App header {
-  color: #000;
-  padding: 20px;
-  font-size: 1.5em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.App header ul li  {
-
-  display: inline-block;
-  margin: 0 10px;
+.custom-width {
+  width: 100%;
+  max-width: 200px;
 }
