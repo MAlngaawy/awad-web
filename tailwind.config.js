@@ -9,9 +9,6 @@ module.exports = {
       fontFamily: {
         roboto: ['Roboto', 'sans-serif']
       }
-      // width: {
-      //   logo: '12.5rem'
-      // }
     }
   },
   variants: {
