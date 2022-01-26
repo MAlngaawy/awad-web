@@ -12,7 +12,7 @@ export const Navbar = () => {
     <header className=" shadow-lg">
       <div className="w-4/5 m-auto flex items-center justify-between">
         <div className="logo w-3/6">
-          <Logo className="w-full sm:w-1/2" />
+          <Logo className="w-full h-full sm:w-1/3" />
         </div>
         <div
           onClick={() => {
@@ -26,7 +26,9 @@ export const Navbar = () => {
           <ul
             className={cn(
               ' transition-all menu sm:flex flex-col sm:flex-row bg-gray-500 sm:bg-transparent absolute left-0 right-0 top-0 sm:static justify-evenly items-center h-full ',
-              !isOpen ? 'transform -translate-y-full ' : 'transform-none '
+              !isOpen
+                ? 'transform -translate-y-full sm:transform-none '
+                : 'transform-none '
             )}
           >
             <span
@@ -37,18 +39,28 @@ export const Navbar = () => {
             >
               <FontAwesomeIcon icon={faTimes} />
             </span>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/blogs">Blogs</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
+            <ListItem close={() => setIsOpen(false)} name={'Home'} link={'/'} />
+            <ListItem
+              close={() => setIsOpen(false)}
+              name={'Blog'}
+              link={'/blogs'}
+            />
+            <ListItem
+              close={() => setIsOpen(false)}
+              name={'About'}
+              link={'/about'}
+            />
           </ul>
         </div>
       </div>
     </header>
+  );
+};
+
+const ListItem = ({ name, link, close }) => {
+  return (
+    <li onClick={() => close()}>
+      <Link to={link}>{name}</Link>
+    </li>
   );
 };

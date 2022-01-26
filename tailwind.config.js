@@ -9,6 +9,12 @@ module.exports = {
       fontFamily: {
         roboto: ['Roboto', 'sans-serif']
       }
+      // keyframes: {
+      //   navbar: {
+      //     '0%': { transform: '-translate-Y(100%)' },
+      //     '100%': { transform: 'translate-Y(0)' }
+      //   }
+      // }
     }
   },
   variants: {
