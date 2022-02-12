@@ -4,6 +4,9 @@ import Blog from './pages/blogs';
 import About from './pages/about';
 import SingleBlog from './pages/single-blog';
 import { Navbar } from './components/navbar';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const api = 'https://mo-strapi-playground.herokuapp.com';
 
@@ -43,5 +46,32 @@ function App() {
 
 export default App;
 
-const Home = () => <h1 className="">HomePage</h1>;
+const Home = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000
+  };
+  return (
+    <Slider {...settings}>
+      <div className="">
+        <h3 className=" p-8 text-center text-4xl bg-black m-4 text-white">1</h3>
+      </div>
+      <div className="">
+        <h3 className=" p-8 text-center text-4xl bg-black m-4 text-white">1</h3>
+      </div>{' '}
+      <div className="">
+        <h3 className=" p-8 text-center text-4xl bg-black m-4 text-white">1</h3>
+      </div>
+      <div className="">
+        <h3 className=" p-8 text-center text-4xl bg-black m-4 text-white">1</h3>
+      </div>{' '}
+    </Slider>
+  );
+};
 export { api };
