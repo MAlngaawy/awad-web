@@ -4,10 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        test: '#f00'
+        test: '#f00',
+        gray: '#f8f9fa'
       },
       fontFamily: {
-        roboto: ['Roboto', 'sans-serif']
+        cabin: ['cabin', 'sans-serif']
       }
       // keyframes: {
       //   navbar: {

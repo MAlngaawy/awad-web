@@ -25,7 +25,7 @@ export const Navbar = () => {
         <div className="contents sm:block sm:w-1/2">
           <ul
             className={cn(
-              ' transition-all menu sm:flex flex-col sm:flex-row bg-gray-500 sm:bg-transparent absolute left-0 right-0 top-0 sm:static justify-evenly items-center h-full ',
+              ' z-50 transition-all menu sm:flex flex-col sm:flex-row bg-gray-500 sm:bg-transparent absolute left-0 right-0 top-0 sm:static justify-evenly items-center h-full ',
               !isOpen
                 ? 'transform -translate-y-full sm:transform-none '
                 : 'transform-none '

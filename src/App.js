@@ -4,34 +4,22 @@ import Blog from './pages/blogs';
 import About from './pages/about';
 import SingleBlog from './pages/single-blog';
 import { Navbar } from './components/navbar';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.min.css';
+import 'swiper/components/pagination/pagination.min.css';
+import 'swiper/components/navigation/navigation.min.css';
+// import required modules
+import SwiperCore, { Pagination, Navigation } from 'swiper/core';
+
+SwiperCore.use([Pagination, Navigation]);
 
 const api = 'https://mo-strapi-playground.herokuapp.com';
 
 function App() {
   return (
-    <div className="App font-roboto">
+    <div className="App font-cabin">
       <Router>
-        {/* <div className="App">
-        <header>
-          <div className="logo">
-            <h1>Awad Blog</h1>
-          </div>
-          <ul className="navbar">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/blogs">Blogs</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-        </header>
-      </div> */}
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -47,31 +35,48 @@ function App() {
 export default App;
 
 const Home = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 2000
-  };
+  const test = ['One', 'Two', 'Three', 'Four', 'Five'];
   return (
-    <Slider {...settings}>
-      <div className="">
-        <h3 className=" p-8 text-center text-4xl bg-black m-4 text-white">1</h3>
-      </div>
-      <div className="">
-        <h3 className=" p-8 text-center text-4xl bg-black m-4 text-white">1</h3>
-      </div>{' '}
-      <div className="">
-        <h3 className=" p-8 text-center text-4xl bg-black m-4 text-white">1</h3>
-      </div>
-      <div className="">
-        <h3 className=" p-8 text-center text-4xl bg-black m-4 text-white">1</h3>
-      </div>{' '}
-    </Slider>
+    <Swiper
+      loop={true}
+      pagination={{
+        clickable: true
+      }}
+      navigation={true}
+      modules={[Pagination, Navigation]}
+      slidesPerView={1}
+    >
+      {/* 
+      
+        // Test Here
+
+         grid grid-flow-col justify-evenly
+      
+      */}
+      {test.map(item => (
+        <SwiperSlide key={item} className="p-10">
+          <div className="slide bg-gray bg-gray-400 mx-10 grid grid-flow-col">
+            <div className="image">
+              <img src="https://picsum.photos/id/10/200/300" alt="" />
+            </div>
+            <div className="info p-10  place-self-center">
+              <h3 className=" uppercase tracking-wider ">Editor's pick</h3>
+              <h2 className="text-xl font-bold leading-normal">
+                News Needs to Meet Its Audiences Where They Are
+              </h2>
+              <h2>This is a small text</h2>
+              <p>
+                {' '}
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore excepturi facilis similique, nulla expedita quos
+                dolorem non officia odio neque deserunt, possimus veniam maiores
+                aliquid. Fugiat ea aspernatur doloribus natus.{' '}
+              </p>
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 export { api };
