@@ -17,6 +17,7 @@ SwiperCore.use([Pagination, Navigation]);
 const api = 'https://mo-strapi-playground.herokuapp.com';
 
 function App() {
+  console.log(process.env.NODE_ENV);
   return (
     <div className="App font-cabin">
       <Router>
