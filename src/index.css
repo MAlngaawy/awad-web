@@ -4,3 +4,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.swiper-button-next {
+  background-color: brown;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.swiper-pagination {
+  background: #000;
+}
