@@ -13,7 +13,7 @@ const api = 'https://mo-strapi-playground.herokuapp.com';
 function App() {
   console.log(process.env.NODE_ENV);
   return (
-    <div className="App font-cabin">
+    <div className="App min-h-screen font-cabin">
       <Router>
         <Navbar />
         <Routes>
@@ -33,9 +33,8 @@ const Home = () => {
   const test = ['One', 'Two', 'Three', 'Four', 'Five'];
   return (
     <>
-      <h1>react responsive carousel</h1>
-      <div className="carouselcontainer">
-        <Carousel>
+      <div className="carouselcontainer mt-20">
+        <Carousel infiniteLoop showStatus={false} autoPlay>
           {test.map(item => (
             <div key={item} className="slide ">
               <div className="inner bg-gray bg-gray-400 grid lg:grid-flow-col w-5/6 m-auto">
@@ -46,7 +45,7 @@ const Home = () => {
                     alt=""
                   />
                 </div>
-                <div className="info p-10 place-self-center">
+                <div className="info p-4 md:p-10 place-self-center text-left">
                   <h3 className=" uppercase tracking-wider ">Editor's pick</h3>
                   <h2 className="text-xl font-bold leading-normal">
                     News Needs to Meet Its Audiences Where They Are
