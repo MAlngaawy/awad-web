@@ -5,13 +5,65 @@
 @tailwind components;
 @tailwind utilities;
 
-.control-arrow  {
-  background-color: black !important;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
+.carousel.carousel-slider .control-arrow {
+  background-color: #fff !important;
+  opacity: 1 !important;
+  top: 0 !important;
+    color: #fff !important;
+    font-size: 22px !important;
+    padding: 0 !important;
+    top: 50% !important;
+    margin: 0 10px !important;
+    width: 50px;
+    height: 30px;
 }
 
-.control-arrow ::before {
-  content: "This is a before";
+/* .carousel.carousel-slider .control-arrow:hover {
+  background-color: #7272722e !important;
+  transition: all 0.2s ease-in-out;
+} */
+
+@media screen and (max-width: 768px) {
+  .carousel.carousel-slider .control-arrow {
+    display: none;
+  }
+}
+
+.carousel .control-next.control-arrow:before {
+  border-left-color: #666 !important;
+}
+
+.carousel .control-prev.control-arrow:before {
+  border-right-color: #666 !important;
+}
+
+.carousel .control-dots {
+  bottom: -30px !important;
+}
+
+.carouselcontainer .carousel-root .carousel .control-dots .dot {
+  transition: opacity .25s ease-in;
+  opacity: .3;
+  box-shadow: none;
+  background: #8bc34a;
+  border-radius: 21px;
+  width: 30px;
+  height: 5px;
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+  margin: 0 8px;
+}
+
+.carouselcontainer .carousel-root .carousel .control-dots .dot.selected {
+  opacity: 1;
+}
+
+.carousel.carousel-slider {
+  position: static !important;
+  overflow: auto !important;
+}
+
+.carouselcontainer {
+  position: relative !important;
 }
