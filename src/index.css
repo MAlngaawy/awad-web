@@ -5,13 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
-.swiper-button-next {
-  background-color: brown;
-  width: 150px;
-  height: 150px;
+.control-arrow  {
+  background-color: black !important;
   border-radius: 50%;
+  width: 30px;
+  height: 30px;
 }
 
-.swiper-pagination {
-  background: #000;
+.control-arrow ::before {
+  content: "This is a before";
 }
