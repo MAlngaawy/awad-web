@@ -4,6 +4,7 @@ import Blog from './pages/blogs';
 import About from './pages/about';
 import SingleBlog from './pages/single-blog';
 import { Navbar } from './components/navbar';
+import Trends from './components/trends';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
@@ -62,6 +63,14 @@ const Home = () => {
             </div>
           ))}
         </Carousel>
+      </div>
+      <div className="recent-blogs grid grid-flow-col">
+        <div className="recent">
+          <h2 className="text-2xl font-bold">Recent Blogs</h2>
+        </div>
+        <div className="side-trends">
+          <Trends />
+        </div>
       </div>
     </>
   );
