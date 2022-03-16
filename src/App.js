@@ -64,9 +64,11 @@ const Home = () => {
           ))}
         </Carousel>
       </div>
-      <div className="recent-blogs grid grid-flow-col">
-        <div className="recent">
-          <h2 className="text-2xl font-bold">Recent Blogs</h2>
+      <div className="recent-blogs grid md:grid-flow-col w-5/6 mx-auto mt-28 md:grid-cols-3">
+        <div className="recent md:col-span-2">
+          <h2 className="text-2xl font-semibold border-b pb-1 w-max">
+            Recent Blogs
+          </h2>
         </div>
         <div className="side-trends">
           <Trends />
