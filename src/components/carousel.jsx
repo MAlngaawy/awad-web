@@ -11,7 +11,7 @@ const CarouselComponent = () => {
       <Carousel infiniteLoop showStatus={false} autoPlay>
         {test.map(item => (
           <div key={item} className="slide ">
-            <div className="inner bg-gray bg-gray-400 grid lg:grid-flow-col w-5/6 m-auto">
+            <div className="inner rounded-xl overflow-hidden bg-gray bg-gray-400 grid lg:grid-flow-col w-5/6 m-auto">
               <div className="image">
                 <img
                   src="http://alveoliphotography.com/wp-content/uploads/2021/06/outdoor-portraits-4.jpg"
