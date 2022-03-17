@@ -6,6 +6,7 @@ import SingleBlog from './pages/single-blog';
 import { Navbar } from './components/navbar';
 import Trends from './components/trends';
 import CarouselComponent from './components/carousel';
+import RecentBlog from './components/recentBlog';
 
 const api = 'https://mo-strapi-playground.herokuapp.com';
 
@@ -33,14 +34,8 @@ const Home = () => {
     <>
       <CarouselComponent />
       <div className="recent-blogs grid md:grid-flow-col w-5/6 mx-auto mt-28 md:grid-cols-3">
-        <div className="recent md:col-span-2">
-          <h2 className="text-2xl font-semibold border-b pb-1 w-max">
-            Recent Blogs
-          </h2>
-        </div>
-        <div className="side-trends">
-          <Trends />
-        </div>
+        <RecentBlog />
+        <Trends />
       </div>
     </>
   );
