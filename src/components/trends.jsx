@@ -32,14 +32,14 @@ const SingleTrendComponent = ({
   index
 }) => {
   return (
-    <div className="main grid grid-flow-col my-4 gap-4">
-      <div className="blog-num col-span-1 flex justify-center items-center">
-        <span className="text-4xl md:text-5xl font-bold text-black opacity-40">
+    <div key={index} className="main grid grid-flow-col my-4 gap-4">
+      <div className="blog-num col-span-1 flex justify-end items-top">
+        <span className="text-xl md:text-2xl font-bold text-black opacity-40">
           {`0${index + 1}`}
         </span>
       </div>
       <div className="content col-start-2 col-end-4" key={item}>
-        <h1 className="text-l lg:text-xl font-semibold my-1">{title}</h1>
+        <h1 className="text-l lg:text-xl font-semibold mb-1">{title}</h1>
         <div className="info grid grid-flow-col text-sm md:text-l text-black opacity-60 font-semibold">
           <h3 className="author">{author}</h3>
           <h3 className="date">{date}</h3>
