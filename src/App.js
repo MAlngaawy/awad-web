@@ -33,7 +33,7 @@ const Home = () => {
   return (
     <>
       <CarouselComponent />
-      <div className="recent-blogs grid md:grid-flow-col w-5/6 mx-auto mt-28 md:grid-cols-3">
+      <div className="recent-blogs grid md:grid-flow-col w-5/6 mx-auto mt-28 md:grid-cols-3 gap-5">
         <RecentBlog />
         <Trends />
       </div>
